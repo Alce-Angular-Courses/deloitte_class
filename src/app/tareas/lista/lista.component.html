@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">Tareas</h4>
+  </div>
+  <div class="card-body">
+    <p class="card-text">Nueva tarea</p>
+    <input type="text" [(ngModel)]="sTarea">
+    <button class="btn btn-primary" (click)="addTareas()">Añadir tarea</button>
+  </div>
+  <div class="card-footer text-muted" *ngIf="aTareas.length">
+    <h2>Tareas</h2>
+    <ul>
+      <li *ngFor="let tarea of aTareas; let i = index">{{ tarea }} ({{i+1}}) </li>
+    </ul>
+  </div>
+</div>

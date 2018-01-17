@@ -1,0 +1,16 @@
+
+<div class="card">
+  <div class="card-header">
+    Binding
+  </div>
+  <div class="card-body">
+    <h4 class="card-title">Escribe tu nombre</h4>
+    <p class="card-text">
+      <input type="text" [(ngModel)] ="nombre"></p>
+      <button (click)="btnBorrar($event)" class="btn">Borrar</button>
+  </div>
+  <div class="card-footer text-muted">
+    <p>Hola {{ edad > 30 ? 'D.' : '' }}  {{ nombre.toUpperCase() }}</p> 
+    <p>Tienes {{ 20 + 10 }} años</p>
+  </div>
+</div>

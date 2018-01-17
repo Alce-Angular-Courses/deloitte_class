@@ -1,0 +1,62 @@
+<div class="card">
+  <div class="card-header">
+    Orden de impresion
+  </div>
+  <div class="card-body">
+    <form>
+                <!--Radio-Buttos-->
+                <fieldset class="form-group">
+                    <legend>Selecciona una Impresora</legend>
+                        <div class="form-check" *ngFor="let printer of printers">
+                            <label class="form-check-label" >
+                                <input 
+                                    type="radio" class="form-check-input"
+                                    name ="printer" id="{{printer.nombre}}" 
+                                    [value]="printer" [(ngModel)]="orden.impresora">
+                                    {{printer.nombre}}
+                            </label>
+                        </div>
+  
+                </fieldset>
+                <!--Checkbox-->   
+                <fieldset class="form-group"> 
+                    <legend>Seleción de opciones</legend>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                        <input type="checkbox"  class="form-check-input"
+                            id="color" name="color" 
+                            [(ngModel)]="orden.isColor">
+                            Imprimir en color
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                        <input type="checkbox"  class="form-check-input"
+                            id="tono" name="tono"
+                            [(ngModel)]="orden.isClaro"> 
+                            Tono claro</label>			
+                    </div>
+                </fieldset>
+                <!--Select/options --> 
+                <fieldset class="form-group"> 
+                    <legend>Departameto</legend>
+                    <div class="form-group row">
+                        <select class="form-control"
+                            id="select" name="select" [(ngModel)]="orden.departamento"> 
+                            <option *ngFor="let dpto of departamentos" [ngValue]="dpto"
+                            >{{dpto.nombre}}</option>
+                        </select>
+                    </div>
+                </fieldset>
+                <div class="form-group row">
+                    <button type="submit" class="btn btn-primary mr-2">
+                        Enviar</button>
+                    <button type="button" class="btn btn-primary">
+                        Borrar</button>
+                </div>
+            </form>
+  </div>
+  <div class="card-footer text-muted">
+    <pre>{{orden | json}}</pre>
+  </div>
+</div>

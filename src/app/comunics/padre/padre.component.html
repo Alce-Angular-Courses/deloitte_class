@@ -1,0 +1,16 @@
+
+<div class="card">
+  <div class="card-header">
+    Padre
+  </div>
+  <div class="card-body">
+    <h4 class="card-title">Escribe el nombre del hijo</h4>
+    <p class="card-text">
+      <input type="text" [(ngModel)] ="nombre"></p>
+      <p></p>
+      <app-hijo [nombre]="nombre" (nombreHijo)="borrarNombre($event)" class="col"></app-hijo>
+  </div>
+  <div class="card-footer text-muted">
+    <p>Mi hijo se llama {{ nombre }}</p> 
+  </div>
+</div>

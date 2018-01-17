@@ -1,0 +1,17 @@
+
+<div class="card">
+  <div class="card-header">
+    Referencias locales
+  </div>
+  <div class="card-body">
+    <h4 class="card-title">Escribe tu nombre</h4>
+    <p class="card-text">
+      <input type="text" #nombre></p>
+      <button (click)="nombre.value = nombre.value " class="btn">Salvar</button>
+      <button (click)="nombre.value = '' " class="btn">Borrar</button>
+  </div>
+  <div class="card-footer text-muted">
+    <p>Hola  {{ nombre.value }}</p> 
+    <p>Tienes {{ 20 + 10 }} años</p>
+  </div>
+</div>
